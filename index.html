@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gozinaki team</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Godzinaki</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #fdf6ec;
-      color: #3b2f2f;
-      display: flex;
-      flex-direction: column;
+      font-family: sans-serif;
+      font-size: 16px;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      text-align: center;
+      display: flex;
+      background: linear-gradient(to bottom, #39c6f6 0%, #BAE9FC 100%);
     }
 
-    header {
-      background-color: #d9a441;
-      width: 100%;
-      padding: 1rem;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .grid {
+      display: grid;
+      grid-template-rows: 22% 28% 25% auto auto;
+      position: relative;
+      aspect-ratio: 21 / 9;
+      height: 100vh;
+      min-height: 340px;
+      min-width: 280px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .bg_mountain {
+      position: absolute;
+      inset: 0;
+      grid-row: 1 / 4;
+      background-image: url('assets/1920_landscape.svg');
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      z-index: -1;
+      pointer-events: none;
     }
 
-    main {
-      padding: 2rem;
-      max-width: 600px;
+    @media (max-aspect-ratio: 2/1) {
+      .grid {grid-template-rows: 35% 20% 25% auto auto}
+    }    
+
+    .row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3e95c9;
+      font-size: clamp(0.5rem, 8vw, 8rem);
+      
+      font-family: 'Fredoka One', Arial;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
-    .gozinaki-img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .row-copyright {
+      font-size: 1rem;
+      font-family: Arial, Helvetica;
     }
 
-    .description {
-      margin: 1.5rem 0;
-      font-size: 1.2rem;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    .contacts a {
-      color: #8a5e26;
-      text-decoration: none;
-      margin: 0 0.5rem;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
-  <header>Gozinaki</header>
-  <main>
-    <img class="gozinaki-img" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Gozinaki.jpg" alt="Gozinaki - Traditional Georgian sweet" />
-    <div class="description">
-      <p><strong>Gozinaki</strong> is a traditional Georgian confection made of caramelized nuts, usually walnuts, and honey. It symbolizes prosperity and is especially enjoyed during the New Year and Christmas holidays.</p>
-    </div>
-    <div class="contacts">
-      <p>Contact us:</p>
-      <a href="mailto:support@gozinaki.team">Email</a>
-    </div>
-  </main>
-  <footer>
-    &copy; 2025 Gozinaki | Made with sweet love
-  </footer>
+  
+    <div class="grid">
+        <div class="bg_mountain"></div>
+    
+        <div class="row" >
+            <img 
+                src="assets/head_logo_gozinaki.png" 
+                alt="Gozinaki Team Logo" 
+                style="height: auto; max-height: 15vh; min-height: 100px;">
+        </div>
+        <div class="row">Taste the fun!</div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row row-copyright">Gozinaki.Team 2025 | Made with sweet love</div>
+  </div>
+
 </body>
 </html>
